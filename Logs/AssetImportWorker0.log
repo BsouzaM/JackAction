@@ -15,11 +15,11 @@ D:/GitHub/JackAction
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50594
+50715
 Successfully changed project path to: D:/GitHub/JackAction
 D:/GitHub/JackAction
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 48.56 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 46.97 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.9f1 (108be757e447)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -36,67 +36,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56668
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56128
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001098 seconds.
+Registered in 0.001467 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 46.77 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 56.73 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.777 seconds
+- Completed reload, in  0.787 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003200 seconds.
+Registered in 0.003309 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 62.47 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 52.86 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.005 seconds
+- Completed reload, in  0.946 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
+Refreshing native plugins compatible for Editor in 0.57 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2969 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 137.9 MB.
 System memory in use after: 138.1 MB.
 
 Unloading 141 unused Assets to reduce memory usage. Loaded Objects now: 3430.
-Total: 2.544100 ms (FindLiveObjects: 0.323200 ms CreateObjectMapping: 0.070200 ms MarkObjects: 1.988000 ms  DeleteObjects: 0.161600 ms)
+Total: 2.850900 ms (FindLiveObjects: 0.281300 ms CreateObjectMapping: 0.079000 ms MarkObjects: 2.316200 ms  DeleteObjects: 0.173200 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets
-  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42d402b061de3733987d63b9cc3b64de') in 0.009778 seconds
-  Import took 0.042169 seconds .
+  path: Assets/JackAction/Prefabs/Interior_Casa.prefab
+  artifactKey: Guid(2b0ab2fa418ebca49a2c911ab3591970) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JackAction/Prefabs/Interior_Casa.prefab using Guid(2b0ab2fa418ebca49a2c911ab3591970) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea640001d893e16f8a24669fc020fd48') in 0.046735 seconds
+  Import took 0.069948 seconds .
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.722108 seconds.
-  path: Assets/Models
-  artifactKey: Guid(7524a248f7a2f6a4c99c0caec2b0f22f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models using Guid(7524a248f7a2f6a4c99c0caec2b0f22f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68c9ac5f086513344a1aced46cbc5c64') in 0.013126 seconds
-  Import took 0.027806 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 31.276188 seconds.
-  path: Assets/candeiro.fbx
-  artifactKey: Guid(3dded7ab182bca24abca7281d2d868e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/candeiro.fbx using Guid(3dded7ab182bca24abca7281d2d868e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8c4278ea417f0eb7c04d4dccf6e6a53') in 0.287051 seconds
-  Import took 0.304994 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000175 seconds.
-  path: Assets/taboleta.fbx
-  artifactKey: Guid(41b4524c3c9d489439de2bd8af888ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/taboleta.fbx using Guid(41b4524c3c9d489439de2bd8af888ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d56f5982aa77f600c6d6c2dedd691d2') in 0.032463 seconds
-  Import took 0.041182 seconds .
-
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
