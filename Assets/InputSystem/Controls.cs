@@ -33,6 +33,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ChangeScene"",
+                    ""type"": ""Button"",
+                    ""id"": ""5753138b-2422-4e6a-a1b9-7d584b10d18c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -101,6 +109,17 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""DirectionalMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""abbde7df-9ce7-488c-a4e8-32495f630ae2"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""ChangeScene"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -128,6 +147,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_MouseMovement = m_Player.FindAction("MouseMovement", throwIfNotFound: true);
         m_Player_DirectionalMovement = m_Player.FindAction("DirectionalMovement", throwIfNotFound: true);
+        m_Player_ChangeScene = m_Player.FindAction("ChangeScene", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -179,12 +199,14 @@ public class @Controls : IInputActionCollection, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_MouseMovement;
     private readonly InputAction m_Player_DirectionalMovement;
+    private readonly InputAction m_Player_ChangeScene;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
         public PlayerActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @MouseMovement => m_Wrapper.m_Player_MouseMovement;
         public InputAction @DirectionalMovement => m_Wrapper.m_Player_DirectionalMovement;
+        public InputAction @ChangeScene => m_Wrapper.m_Player_ChangeScene;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -200,6 +222,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @DirectionalMovement.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDirectionalMovement;
                 @DirectionalMovement.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDirectionalMovement;
                 @DirectionalMovement.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDirectionalMovement;
+                @ChangeScene.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeScene;
+                @ChangeScene.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeScene;
+                @ChangeScene.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeScene;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -210,6 +235,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @DirectionalMovement.started += instance.OnDirectionalMovement;
                 @DirectionalMovement.performed += instance.OnDirectionalMovement;
                 @DirectionalMovement.canceled += instance.OnDirectionalMovement;
+                @ChangeScene.started += instance.OnChangeScene;
+                @ChangeScene.performed += instance.OnChangeScene;
+                @ChangeScene.canceled += instance.OnChangeScene;
             }
         }
     }
@@ -227,5 +255,6 @@ public class @Controls : IInputActionCollection, IDisposable
     {
         void OnMouseMovement(InputAction.CallbackContext context);
         void OnDirectionalMovement(InputAction.CallbackContext context);
+        void OnChangeScene(InputAction.CallbackContext context);
     }
 }

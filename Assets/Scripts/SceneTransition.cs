@@ -5,12 +5,38 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-            SceneManager.LoadScene("JA_House_Interior");
+    private Controls _Controls;
+    private bool casa = true;
 
-        if (Input.GetKeyDown(KeyCode.L))
-            SceneManager.LoadScene("JA_Supermarket_Interior");
+    private void OnEnable()
+    {
+        _Controls = new Controls();
+        _Controls.Player.ChangeScene.performed += ChangeScene_performed;
+        _Controls.Player.ChangeScene.Enable();
     }
+
+    private void OnDisable()
+    {
+        _Controls = new Controls();
+        _Controls.Player.ChangeScene.performed -= ChangeScene_performed;
+        _Controls.Player.ChangeScene.Disable();
+    }
+
+    private void ChangeScene_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        if (casa)
+        {
+            casa = false;
+            SceneManager.LoadScene("JA_Supermarket_Interior");
+            
+        }
+        else
+        {
+
+            SceneManager.LoadScene("JA_House_Interior");
+            
+        }
+
+    }
+
 }
