@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static Enums;
 
 public class MouseLook : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class MouseLook : MonoBehaviour
     private float _LowerAngle = 30;
     private float LowerAngleInRad;
 
+    public LookState CameraState;
 
 
     // Start is called before the first frame update
@@ -58,6 +60,7 @@ public class MouseLook : MonoBehaviour
         UpperAngle = _UpperAngle;
         LowerAngle = _LowerAngle;
         Cursor.lockState = CursorLockMode.Locked;
+        CameraState = LookState.THIRDPERSON;
     }
     private void OnEnable()
     {
@@ -116,15 +119,26 @@ public class MouseLook : MonoBehaviour
 
     private void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.parent.position, -transform.forward, out hit, Maxdist))
+        switch (CameraState)
         {
-            transform.position = transform.parent.position - (transform.forward * hit.distance);
+            case LookState.THIRDPERSON:
+                RaycastHit hit;
+                if (Physics.Raycast(transform.parent.position, -transform.forward, out hit, Maxdist))
+                {
+                    transform.position = transform.parent.position - (transform.forward * hit.distance);
+                }
+                else
+                {
+                    transform.position = transform.parent.position - (transform.forward * Maxdist);
+                }
+                break;
+            case LookState.CORNERVIEW:
+                break;
+            default:
+                CameraState = LookState.THIRDPERSON;
+                break;
         }
-        else
-        {
-            transform.position = transform.parent.position - (transform.forward * Maxdist);
-        }
+
     }
 
 }
