@@ -36,7 +36,9 @@ public class PlayerMovement : MonoBehaviour
     [Range(2f, 10f)]
     public float moveSpeed = 7f;
     public Camera correctCamera;
-
+    public delegate void TriggerEnter(Collider other);
+    public event TriggerEnter Entered;
+    public event TriggerEnter Exit;
     private void OnEnable()
     {
         _Controls = new Controls();
@@ -63,6 +65,14 @@ public class PlayerMovement : MonoBehaviour
         {
             throw new System.NotImplementedException();
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Entered?.Invoke(other);
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        Exit?.Invoke(other);
     }
 
     private void OnDisable()

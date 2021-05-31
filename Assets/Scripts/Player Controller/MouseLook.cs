@@ -51,17 +51,41 @@ public class MouseLook : MonoBehaviour
     private float _LowerAngle = 30;
     private float LowerAngleInRad;
 
+    public Transform cornerpos;
+
     public LookState CameraState;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<PlayerMovement>().Entered += MouseLook_Entered;
+        FindObjectOfType<PlayerMovement>().Exit += MouseLook_Exit;
         UpperAngle = _UpperAngle;
         LowerAngle = _LowerAngle;
         Cursor.lockState = CursorLockMode.Locked;
         CameraState = LookState.THIRDPERSON;
     }
+
+    private void MouseLook_Exit(Collider other)
+    {
+        if (other.transform.tag == "RoomSection")
+        {
+            cornerpos = null;
+            CameraState = LookState.THIRDPERSON;
+            transform.LookAt(transform.parent);
+        }
+    }
+
+    private void MouseLook_Entered(Collider other)
+    {
+        if (other.transform.tag == "RoomSection")
+        {
+            CameraState = LookState.CORNERVIEW;
+            cornerpos = other.transform;
+        }
+    }
+
     private void OnEnable()
     {
         _Controls = new Controls();
@@ -91,38 +115,24 @@ public class MouseLook : MonoBehaviour
 
     void MoveCam(Vector2 read)
     {
-
-
-        if ((transform.eulerAngles.x + read.y < LowerAngle && transform.eulerAngles.x < 180) ||
-            (transform.eulerAngles.x + read.y > 360 - UpperAngle && transform.eulerAngles.x > 180)
-           //transform.rotation.x >= -UpperAngleInRad &&
-           //transform.rotation.x <= LowerAngleInRad
-           )
+        if (CameraState == LookState.THIRDPERSON)
         {
-            transform.Rotate(new Vector3(read.y, 0, 0));
+            if ((transform.eulerAngles.x + read.y < LowerAngle && transform.eulerAngles.x < 180) ||
+                (transform.eulerAngles.x + read.y > 360 - UpperAngle && transform.eulerAngles.x > 180)
+               )
+            {
+                transform.Rotate(new Vector3(read.y, 0, 0));
+            }
+            transform.parent.Rotate(new Vector3(0f, read.x, 0f));
         }
-        //else
-        //{
-        //    if (transform.rotation.x + read.y > LowerAngleInRad)
-        //    {
-        //        Debug.Log("Snapping to lower");
-        //        transform.eulerAngles = new Vector3(LowerAngle, 0f, 0f);
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("Snapping to higher");
-        //        transform.eulerAngles = new Vector3(360 - UpperAngle, 0f, 0f);
-        //    }
-        //}
-        transform.parent.Rotate(new Vector3(0f, read.x, 0f));
     }
-
     private void Update()
     {
+        RaycastHit hit;
         switch (CameraState)
         {
             case LookState.THIRDPERSON:
-                RaycastHit hit;
+
                 if (Physics.Raycast(transform.parent.position, -transform.forward, out hit, Maxdist))
                 {
                     transform.position = transform.parent.position - (transform.forward * hit.distance);
@@ -133,6 +143,22 @@ public class MouseLook : MonoBehaviour
                 }
                 break;
             case LookState.CORNERVIEW:
+                if (cornerpos != null)
+                {
+                    transform.position = cornerpos.position;
+                    transform.LookAt(transform.parent);
+                }
+                else
+                {
+                    if (Physics.Raycast(transform.parent.position, -transform.forward, out hit, Maxdist))
+                    {
+                        transform.position = transform.parent.position - (transform.forward * hit.distance);
+                    }
+                    else
+                    {
+                        transform.position = transform.parent.position - (transform.forward * Maxdist);
+                    }
+                }
                 break;
             default:
                 CameraState = LookState.THIRDPERSON;
