@@ -68,6 +68,7 @@ System memory in use after: 154.9 MB.
 
 Unloading 146 unused Assets to reduce memory usage. Loaded Objects now: 3781.
 Total: 2.601900 ms (FindLiveObjects: 0.300900 ms CreateObjectMapping: 0.086500 ms MarkObjects: 2.053500 ms  DeleteObjects: 0.160100 ms)
+<<<<<<< HEAD
 
 ========================================================================
 Received Import Request.
@@ -91,5 +92,7 @@ Received Import Request.
   artifactKey: Guid(bbcc03f6b7a997c4baff6849f198c433) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Prefabs/Jogador/Player.prefab using Guid(bbcc03f6b7a997c4baff6849f198c433) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b1131b07a6972941447dbb9a01a6d58') in 0.145589 seconds
   Import took 0.150492 seconds .
+=======
+>>>>>>> 9c1aa5e6ea444372df0401449becafd38d2af75b
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
