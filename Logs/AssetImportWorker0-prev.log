@@ -68,4 +68,31 @@ System memory in use after: 154.9 MB.
 
 Unloading 146 unused Assets to reduce memory usage. Loaded Objects now: 3781.
 Total: 2.601900 ms (FindLiveObjects: 0.300900 ms CreateObjectMapping: 0.086500 ms MarkObjects: 2.053500 ms  DeleteObjects: 0.160100 ms)
+<<<<<<< HEAD
 
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/House_Interior/JA_House_Interior.unity
+  artifactKey: Guid(dfa7be9dc20de1543a60ad4e50317899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/House_Interior/JA_House_Interior.unity using Guid(dfa7be9dc20de1543a60ad4e50317899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ea65737f093ec60c04a58d5502983ad') in 0.013645 seconds
+  Import took 0.018677 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.335208 seconds.
+  path: Assets/Prefabs/Interior_Casa 1.prefab
+  artifactKey: Guid(17028fc6dc0a41f4f890951cf8619a59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Interior_Casa 1.prefab using Guid(17028fc6dc0a41f4f890951cf8619a59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f01b1a5eaaba3ee6792525204f8d468') in 0.033596 seconds
+  Import took 0.038157 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 57.657438 seconds.
+  path: Assets/Prefabs/Jogador/Player.prefab
+  artifactKey: Guid(bbcc03f6b7a997c4baff6849f198c433) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Jogador/Player.prefab using Guid(bbcc03f6b7a997c4baff6849f198c433) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b1131b07a6972941447dbb9a01a6d58') in 0.145589 seconds
+  Import took 0.150492 seconds .
+=======
+>>>>>>> 9c1aa5e6ea444372df0401449becafd38d2af75b
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
