@@ -12,8 +12,8 @@ public class MouseLook : MonoBehaviour
     /// <summary>
     /// Sensibilidade do rato
     /// </summary>
-    [Range(0.2f, 10f)]
-    public float Sensibilidade = 1;
+    [Range(0.2f, 100f)]
+    public float Sensibilidade = 15;
     public float UpperAngle
     {
         get
@@ -55,6 +55,9 @@ public class MouseLook : MonoBehaviour
 
     public LookState CameraState;
 
+    private Vector2 dir;
+    private bool mouse;
+
 
     // Start is called before the first frame update
     void Start()
@@ -93,19 +96,19 @@ public class MouseLook : MonoBehaviour
     {
         _Controls = new Controls();
         _Controls.Player.MouseMovement.performed += HandleLook;
+        _Controls.Player.MouseMovement.canceled += MouseMovement_canceled;
         _Controls.Player.MouseMovement.Enable();
+    }
+
+    private void MouseMovement_canceled(InputAction.CallbackContext obj)
+    {
+        dir = Vector2.zero;
     }
 
     private void HandleLook(InputAction.CallbackContext obj)
     {
-        if (obj.ReadValue<Vector2>().magnitude > 0)
-        {
-            MoveCam(obj.ReadValue<Vector2>() / 100 * Sensibilidade);
-        }
-        else
-        {
-            Debug.Log("no input");
-        }
+        dir = obj.ReadValue<Vector2>();
+        mouse = obj.control.device.name == "Mouse";
     }
 
     private void OnDisable()
@@ -127,11 +130,15 @@ public class MouseLook : MonoBehaviour
                 transform.Rotate(new Vector3(read.y, 0, 0));
             }
             //transform.parent.Rotate(new Vector3(0f, read.x, 0f));
-            transform.RotateAround(Vector3.zero, Vector3.up,read.x);
+            transform.RotateAround(Vector3.zero, Vector3.up, read.x);
         }
     }
     private void Update()
     {
+        MoveCam(dir / 100 * Sensibilidade);
+        if (mouse)
+            dir = Vector2.zero;
+
         RaycastHit hit;
         switch (CameraState)
         {

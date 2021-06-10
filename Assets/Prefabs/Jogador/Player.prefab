@@ -143,10 +143,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Maxdist: 3
-  Sensibilidade: 1
+  Sensibilidade: 59.2
   _UpperAngle: 40
   _LowerAngle: 30
-  cornerpos: {fileID: 0}
+  cornerpos:
+  - {fileID: 0}
   CameraState: 0
 --- !u!1 &6222150838423272873
 GameObject:
@@ -262,7 +263,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 64
   m_CollisionDetection: 0
 --- !u!114 &6222150838423272876
 MonoBehaviour:
@@ -278,6 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   correctCamera: {fileID: 0}
+  rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &7768137071669403330
 MonoBehaviour:
   m_ObjectHideFlags: 0

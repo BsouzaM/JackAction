@@ -52,8 +52,19 @@
                     "id": "9058b63b-344b-4f17-8c45-46a244c64e14",
                     "path": "<Mouse>/delta",
                     "interactions": "",
-                    "processors": "ScaleVector2(y=-1)",
+                    "processors": "ScaleVector2(y=-1),NormalizeVector2",
                     "groups": "PC",
+                    "action": "MouseMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a50d401a-8c61-49f8-bc96-0c7ea9570823",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "Consolas",
                     "action": "MouseMovement",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -115,11 +126,33 @@
                 },
                 {
                     "name": "",
+                    "id": "d81b521a-71bd-411b-903b-2880152fb1a1",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "Consolas",
+                    "action": "DirectionalMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "abbde7df-9ce7-488c-a4e8-32495f630ae2",
                     "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
+                    "action": "ChangeScene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "68dc3cd0-df96-468b-82f9-f5d9e63b571d",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Consolas",
                     "action": "ChangeScene",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -137,11 +170,33 @@
                 },
                 {
                     "name": "",
+                    "id": "8619f112-b64d-440e-9e92-8c6407787c00",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Consolas",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "678fa973-2d0d-4402-8dc1-e5781f9395b5",
                     "path": "<Keyboard>/anyKey",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "afcdeb0e-6671-4630-b46f-ebbcc58da1a8",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Consolas",
                     "action": "Skip",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -161,6 +216,22 @@
                 },
                 {
                     "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Consolas",
+            "bindingGroup": "Consolas",
+            "devices": [
+                {
+                    "devicePath": "<DualShockGamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<XInputController>",
                     "isOptional": false,
                     "isOR": false
                 }
