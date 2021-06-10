@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     public event TriggerEnter Entered;
     public event TriggerEnter Exit;
 
-    private Quaternion rot;
+    public Quaternion rot;
     private void OnEnable()
     {
         _Controls = new Controls();
@@ -125,6 +125,11 @@ public class PlayerMovement : MonoBehaviour
             res = transform.rotation * res;
             //Player_Rb.AddRelativeForce(res, ForceMode.VelocityChange);
             transform.position += res * Time.deltaTime;
+
+
+            rot = Quaternion.Lerp(rot, Quaternion.Euler(Vector3.Scale(Vector3.up, Camera.main.transform.rotation.eulerAngles)), 0.8f);
+            Camera.main.transform.localEulerAngles = new Vector3(Camera.main.transform.eulerAngles.x, 0, Camera.main.transform.eulerAngles.z);
+
         }
     }
 }
