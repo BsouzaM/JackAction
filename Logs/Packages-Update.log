@@ -61,7 +61,11 @@ The following packages were updated:
   com.unity.textmeshpro from version 2.1.1 to 3.0.6
   com.unity.timeline from version 1.2.17 to 1.4.8
 
+<<<<<<< Updated upstream
 === Sun Jun  6 18:40:23 2021
+=======
+=== Sun Jun  6 18:29:49 2021
+>>>>>>> Stashed changes
 
 Packages were changed.
 Update Mode: updateDependencies
