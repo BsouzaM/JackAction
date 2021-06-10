@@ -39,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     public delegate void TriggerEnter(Collider other);
     public event TriggerEnter Entered;
     public event TriggerEnter Exit;
+
+    private Quaternion rot;
     private void OnEnable()
     {
         _Controls = new Controls();
@@ -58,6 +60,8 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
+                rot = Quaternion.Euler(Vector3.Scale(Vector3.up, Camera.main.transform.rotation.eulerAngles));
+                Camera.main.transform.localEulerAngles = new Vector3(Camera.main.transform.eulerAngles.x, 0, Camera.main.transform.eulerAngles.z);
                 currentState = PlayerState.MOVING;
             }
         }
@@ -117,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
         if (correctCamera.gameObject.activeSelf)
         {
             Vector3 res = new Vector3(MoveAxis.x * moveSpeed, 0, MoveAxis.y * moveSpeed);
-            transform.rotation = Quaternion.Euler(Vector3.Scale(Vector3.up, Camera.main.transform.rotation.eulerAngles));
+            transform.rotation = rot;
             res = transform.rotation * res;
             //Player_Rb.AddRelativeForce(res, ForceMode.VelocityChange);
             transform.position += res * Time.deltaTime;

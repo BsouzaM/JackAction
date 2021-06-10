@@ -51,7 +51,7 @@ public class MouseLook : MonoBehaviour
     private float _LowerAngle = 30;
     private float LowerAngleInRad;
 
-    public Transform cornerpos;
+    public List<Transform> cornerpos;
 
     public LookState CameraState;
 
@@ -71,9 +71,12 @@ public class MouseLook : MonoBehaviour
     {
         if (other.transform.tag == "RoomSection")
         {
-            cornerpos = null;
-            CameraState = LookState.THIRDPERSON;
-            transform.LookAt(transform.parent);
+            cornerpos.Remove(other.transform);
+            if (cornerpos.Count == 0)
+            {
+                CameraState = LookState.THIRDPERSON;
+                transform.LookAt(transform.parent);
+            }
         }
     }
 
@@ -82,7 +85,7 @@ public class MouseLook : MonoBehaviour
         if (other.transform.tag == "RoomSection")
         {
             CameraState = LookState.CORNERVIEW;
-            cornerpos = other.transform;
+            cornerpos.Add(other.transform);
         }
     }
 
@@ -123,7 +126,8 @@ public class MouseLook : MonoBehaviour
             {
                 transform.Rotate(new Vector3(read.y, 0, 0));
             }
-            transform.parent.Rotate(new Vector3(0f, read.x, 0f));
+            //transform.parent.Rotate(new Vector3(0f, read.x, 0f));
+            transform.RotateAround(Vector3.zero, Vector3.up,read.x);
         }
     }
     private void Update()
@@ -143,9 +147,9 @@ public class MouseLook : MonoBehaviour
                 }
                 break;
             case LookState.CORNERVIEW:
-                if (cornerpos != null)
+                if (cornerpos.Count > 0)
                 {
-                    transform.position = cornerpos.position;
+                    transform.position = cornerpos[0].GetChild(0).position;
                     transform.LookAt(transform.parent);
                 }
                 else
