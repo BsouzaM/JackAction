@@ -22,9 +22,11 @@ public class InteractActor : MonoBehaviour
 
     private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
+        inside.RemoveAll(go => go.gameObject.activeSelf == false);
         foreach (Collider este in inside)
         {
-            if (este.GetComponent<InteractBehaviour>())
+
+            if (este.GetComponent<InteractBehaviour>() && este.gameObject.activeSelf)
             {
                 este.GetComponent<InteractBehaviour>().OnInteract();
                 break;
