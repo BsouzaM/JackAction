@@ -62,6 +62,7 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cornerpos.RemoveAt(0);
         FindObjectOfType<PlayerMovement>().Entered += MouseLook_Entered;
         FindObjectOfType<PlayerMovement>().Exit += MouseLook_Exit;
         UpperAngle = _UpperAngle;
