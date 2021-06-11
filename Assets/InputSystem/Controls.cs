@@ -57,6 +57,14 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ChangeSensibility"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""1893c20e-b925-4623-b612-274430c14275"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -150,30 +158,8 @@ public class @Controls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""abbde7df-9ce7-488c-a4e8-32495f630ae2"",
-                    ""path"": ""<Keyboard>/p"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""ChangeScene"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""68dc3cd0-df96-468b-82f9-f5d9e63b571d"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Consolas"",
-                    ""action"": ""ChangeScene"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""906b66f0-c0f9-40a8-a186-de60db3a338a"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""PC"",
@@ -213,6 +199,50 @@ public class @Controls : IInputActionCollection, IDisposable
                     ""action"": ""Skip"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""29352c8e-fc4c-4f11-b1f3-3564bfbbf92f"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": ""Normalize(min=-120,max=120)"",
+                    ""groups"": ""PC"",
+                    ""action"": ""ChangeSensibility"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""7c91fb8e-08a7-44e9-bb0f-60f979432640"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=4)"",
+                    ""groups"": """",
+                    ""action"": ""ChangeSensibility"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""1cb39f77-70a5-4724-a950-f22e20c92b20"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Consolas"",
+                    ""action"": ""ChangeSensibility"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""b9277efd-f1ca-49cf-bf3c-6ff36fcbb085"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Consolas"",
+                    ""action"": ""ChangeSensibility"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -259,6 +289,7 @@ public class @Controls : IInputActionCollection, IDisposable
         m_Player_ChangeScene = m_Player.FindAction("ChangeScene", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Skip = m_Player.FindAction("Skip", throwIfNotFound: true);
+        m_Player_ChangeSensibility = m_Player.FindAction("ChangeSensibility", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -313,6 +344,7 @@ public class @Controls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_ChangeScene;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Skip;
+    private readonly InputAction m_Player_ChangeSensibility;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -322,6 +354,7 @@ public class @Controls : IInputActionCollection, IDisposable
         public InputAction @ChangeScene => m_Wrapper.m_Player_ChangeScene;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Skip => m_Wrapper.m_Player_Skip;
+        public InputAction @ChangeSensibility => m_Wrapper.m_Player_ChangeSensibility;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -346,6 +379,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Skip.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkip;
                 @Skip.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkip;
                 @Skip.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkip;
+                @ChangeSensibility.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeSensibility;
+                @ChangeSensibility.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeSensibility;
+                @ChangeSensibility.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChangeSensibility;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -365,6 +401,9 @@ public class @Controls : IInputActionCollection, IDisposable
                 @Skip.started += instance.OnSkip;
                 @Skip.performed += instance.OnSkip;
                 @Skip.canceled += instance.OnSkip;
+                @ChangeSensibility.started += instance.OnChangeSensibility;
+                @ChangeSensibility.performed += instance.OnChangeSensibility;
+                @ChangeSensibility.canceled += instance.OnChangeSensibility;
             }
         }
     }
@@ -394,5 +433,6 @@ public class @Controls : IInputActionCollection, IDisposable
         void OnChangeScene(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnSkip(InputAction.CallbackContext context);
+        void OnChangeSensibility(InputAction.CallbackContext context);
     }
 }

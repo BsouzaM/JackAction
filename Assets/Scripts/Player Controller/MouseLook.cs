@@ -97,7 +97,14 @@ public class MouseLook : MonoBehaviour
         _Controls = new Controls();
         _Controls.Player.MouseMovement.performed += HandleLook;
         _Controls.Player.MouseMovement.canceled += MouseMovement_canceled;
+        _Controls.Player.ChangeSensibility.performed += ChangeSensibility_performed;
+        _Controls.Player.ChangeSensibility.Enable();
         _Controls.Player.MouseMovement.Enable();
+    }
+
+    private void ChangeSensibility_performed(InputAction.CallbackContext obj)
+    {
+        Sensibilidade += obj.ReadValue<float>()*5f;
     }
 
     private void MouseMovement_canceled(InputAction.CallbackContext obj)
@@ -115,6 +122,9 @@ public class MouseLook : MonoBehaviour
     {
         _Controls.Player.MouseMovement.performed -= HandleLook;
         _Controls.Player.MouseMovement.Disable();
+        _Controls.Player.ChangeSensibility.performed -= ChangeSensibility_performed;
+        _Controls.Player.MouseMovement.canceled -= MouseMovement_canceled;
+        _Controls.Player.ChangeSensibility.Disable();
     }
 
 

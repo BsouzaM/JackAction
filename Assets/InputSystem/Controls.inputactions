@@ -44,6 +44,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ChangeSensibility",
+                    "type": "PassThrough",
+                    "id": "1893c20e-b925-4623-b612-274430c14275",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -137,30 +145,8 @@
                 },
                 {
                     "name": "",
-                    "id": "abbde7df-9ce7-488c-a4e8-32495f630ae2",
-                    "path": "<Keyboard>/p",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "ChangeScene",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "68dc3cd0-df96-468b-82f9-f5d9e63b571d",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Consolas",
-                    "action": "ChangeScene",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "906b66f0-c0f9-40a8-a186-de60db3a338a",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
@@ -200,6 +186,50 @@
                     "action": "Skip",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29352c8e-fc4c-4f11-b1f3-3564bfbbf92f",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "Normalize(min=-120,max=120)",
+                    "groups": "PC",
+                    "action": "ChangeSensibility",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "7c91fb8e-08a7-44e9-bb0f-60f979432640",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "Scale(factor=4)",
+                    "groups": "",
+                    "action": "ChangeSensibility",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "1cb39f77-70a5-4724-a950-f22e20c92b20",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Consolas",
+                    "action": "ChangeSensibility",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "b9277efd-f1ca-49cf-bf3c-6ff36fcbb085",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Consolas",
+                    "action": "ChangeSensibility",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
