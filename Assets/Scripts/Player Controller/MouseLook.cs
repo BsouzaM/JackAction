@@ -12,7 +12,7 @@ public class MouseLook : MonoBehaviour
     /// <summary>
     /// Sensibilidade do rato
     /// </summary>
-    [Range(0.2f, 100f)]
+    [Range(0.2f, 300f)]
     public float Sensibilidade = 15;
     public float UpperAngle
     {
