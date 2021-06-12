@@ -11,6 +11,7 @@ public class Teleporter : MonoBehaviour
     public bool secondFloor;
     public bool garage;
     private Controls _Controls;
+    private bool inside = false;
 
     private void OnEnable()
     {
@@ -27,12 +28,7 @@ public class Teleporter : MonoBehaviour
 
     private void InteractWithMe(InputAction.CallbackContext obj)
     {
-        Debug.Log("bunda");
-    }
-
-    void OnTriggerEnter(Collider player)
-    {
-        if (player.gameObject.CompareTag("Player"))
+        if (inside)
         {
             if (firstFloor == true && secondFloor == false)
                 // Se o player entrar no trigger e pressionar E, teleporta para o player para o primeiro andar.
@@ -45,7 +41,18 @@ public class Teleporter : MonoBehaviour
                 Garage();
         }
     }
-    
+    void OnTriggerEnter(Collider player)
+    {
+        if (player.gameObject.CompareTag("Player"))
+            inside = true;
+    }
+
+    void OnTriggerExit(Collider player)
+    {
+        if (player.gameObject.CompareTag("Player"))
+            inside = false;
+    }
+
     void SecondFloor()
     {
         // Coordenadas do World Space
