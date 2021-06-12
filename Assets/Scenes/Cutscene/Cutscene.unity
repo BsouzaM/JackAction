@@ -9,7 +9,7 @@ OcclusionCullingSettings:
     smallestHole: 0.25
     backfaceThreshold: 100
   m_SceneGUID: 9fc0d4010bbf28b4594072e72b8655ab
-  m_OcclusionCullingData: {fileID: 36300000, guid: 0d0e97e4b48c96c44a0c76c228b6fe7a,
+  m_OcclusionCullingData: {fileID: 36300000, guid: 0548ea7bf1f74f84382c082366530927,
     type: 2}
 --- !u!104 &2
 RenderSettings:
@@ -100,7 +100,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: b5559c1e25b120d4fb4cd361804508a3,
     type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 32bb91f39b2b8e940bd83824ccee49a6,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: a60383d48fe05a84db87d27b2cd9d012,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -9982,7 +9982,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071947116}
-  m_LocalRotation: {x: -0, y: -0.85073423, z: 0, w: 0.99969333}
+  m_LocalRotation: {x: -0, y: -0.85073423, z: 0, w: -0.5255962}
   m_LocalPosition: {x: -542, y: 0.29999995, z: 46.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
