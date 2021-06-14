@@ -58,6 +58,8 @@ public class MouseLook : MonoBehaviour
     private Vector2 dir;
     private bool mouse;
 
+    private Transform LookTarget;
+
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +71,7 @@ public class MouseLook : MonoBehaviour
         LowerAngle = _LowerAngle;
         Cursor.lockState = CursorLockMode.Locked;
         CameraState = LookState.THIRDPERSON;
+        LookTarget = transform.parent;
     }
 
     private void MouseLook_Exit(Collider other)
@@ -80,6 +83,7 @@ public class MouseLook : MonoBehaviour
             {
                 CameraState = LookState.THIRDPERSON;
                 transform.LookAt(transform.parent);
+                transform.parent = LookTarget;
             }
         }
     }
@@ -88,6 +92,7 @@ public class MouseLook : MonoBehaviour
     {
         if (other.transform.tag == "RoomSection")
         {
+            transform.parent = null;
             CameraState = LookState.CORNERVIEW;
             cornerpos.Add(other.transform);
         }
@@ -105,7 +110,7 @@ public class MouseLook : MonoBehaviour
 
     private void ChangeSensibility_performed(InputAction.CallbackContext obj)
     {
-        Sensibilidade += obj.ReadValue<float>()*5f;
+        Sensibilidade += obj.ReadValue<float>() * 5f;
     }
 
     private void MouseMovement_canceled(InputAction.CallbackContext obj)
@@ -146,14 +151,15 @@ public class MouseLook : MonoBehaviour
     }
     private void Update()
     {
-        MoveCam(dir / 100 * Sensibilidade);
-        if (mouse)
-            dir = Vector2.zero;
+
 
         RaycastHit hit;
         switch (CameraState)
         {
             case LookState.THIRDPERSON:
+                MoveCam(dir / 100 * Sensibilidade);
+                if (mouse)
+                    dir = Vector2.zero;
 
                 if (Physics.Raycast(transform.parent.position, -transform.forward, out hit, Maxdist))
                 {
@@ -168,17 +174,18 @@ public class MouseLook : MonoBehaviour
                 if (cornerpos.Count > 0)
                 {
                     transform.position = cornerpos[0].GetChild(0).position;
-                    transform.LookAt(transform.parent);
+                    transform.LookAt(LookTarget);
+                    
                 }
                 else
                 {
                     if (Physics.Raycast(transform.parent.position, -transform.forward, out hit, Maxdist))
                     {
-                        transform.position = transform.parent.position - (transform.forward * hit.distance);
+                        transform.position = LookTarget.position - (transform.forward * hit.distance);
                     }
                     else
                     {
-                        transform.position = transform.parent.position - (transform.forward * Maxdist);
+                        transform.position = LookTarget.position - (transform.forward * Maxdist);
                     }
                 }
                 break;

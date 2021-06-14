@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     public delegate void TriggerEnter(Collider other);
     public event TriggerEnter Entered;
     public event TriggerEnter Exit;
+    private MouseLook ms;
 
     public Quaternion rot;
     private void OnEnable()
@@ -98,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
         _player_rb = GetComponent<Rigidbody>();
         Player_Rb.freezeRotation = true;
         correctCamera = Camera.main;
+        ms = FindObjectOfType<MouseLook>();
     }
 
 
@@ -128,7 +130,9 @@ public class PlayerMovement : MonoBehaviour
 
 
             rot = Quaternion.Lerp(rot, Quaternion.Euler(Vector3.Scale(Vector3.up, Camera.main.transform.rotation.eulerAngles)), 0.8f);
-            Camera.main.transform.localEulerAngles = new Vector3(Camera.main.transform.eulerAngles.x, 0, Camera.main.transform.eulerAngles.z);
+
+            if (ms.CameraState == LookState.THIRDPERSON)
+                Camera.main.transform.localEulerAngles = new Vector3(Camera.main.transform.eulerAngles.x, 0, Camera.main.transform.eulerAngles.z);
 
         }
     }
