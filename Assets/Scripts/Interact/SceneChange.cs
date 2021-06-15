@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneChange : MonoBehaviour
+public class SceneChange : InteractBehaviour
 {
     public GameObject sceneTrigger;
-    void OnTriggerEnter(Collider other)
+
+    public override void OnInteract()
     {
-        // Se ele entrar no trigger do supermarket, muda de scene
-        if (other.gameObject.tag == "Player") SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);
     }
 }
