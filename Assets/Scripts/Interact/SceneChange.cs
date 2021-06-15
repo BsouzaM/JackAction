@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : InteractBehaviour
 {
-    public GameObject sceneTrigger;
 
     public override void OnInteract()
     {
