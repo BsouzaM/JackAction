@@ -58,12 +58,14 @@ public class PlayerMovement : MonoBehaviour
             if (MoveAxis == Vector2.zero)
             {
                 currentState = PlayerState.STILL;
+                StartCoroutine(gravity());
             }
             else
             {
                 rot = Quaternion.Euler(Vector3.Scale(Vector3.up, Camera.main.transform.rotation.eulerAngles));
                 Camera.main.transform.localEulerAngles = new Vector3(Camera.main.transform.eulerAngles.x, 0, Camera.main.transform.eulerAngles.z);
                 currentState = PlayerState.MOVING;
+                _player_rb.drag = 0;
             }
         }
         catch
@@ -129,11 +131,28 @@ public class PlayerMovement : MonoBehaviour
             transform.position += res * Time.deltaTime;
 
 
-            rot = Quaternion.Lerp(rot, Quaternion.Euler(Vector3.Scale(Vector3.up, Camera.main.transform.rotation.eulerAngles)), 0.8f);
+            
 
             if (ms.CameraState == LookState.THIRDPERSON)
+            {
+                rot = Quaternion.Lerp(rot, Quaternion.Euler(Vector3.Scale(Vector3.up, Camera.main.transform.rotation.eulerAngles)), 0.8f);
                 Camera.main.transform.localEulerAngles = new Vector3(Camera.main.transform.eulerAngles.x, 0, Camera.main.transform.eulerAngles.z);
+            }
 
+        }
+    }
+
+    IEnumerator gravity()
+    {
+        yield return null;
+        RaycastHit hit;
+        if (!Physics.SphereCast(transform.position, 0.2f, -transform.up,out hit,0.8f))
+        {
+            StartCoroutine(gravity());
+        }
+        else
+        {
+            Player_Rb.drag = 30;
         }
     }
 }
