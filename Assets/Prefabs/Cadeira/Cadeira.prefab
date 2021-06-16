@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6529473045669271383}
-  - component: {fileID: 416204853}
+  - component: {fileID: 4547054732234175319}
   m_Layer: 0
   m_Name: Cadeira
   m_TagString: Untagged
@@ -32,8 +32,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -2.665, z: 0}
---- !u!64 &416204853
-MeshCollider:
+--- !u!65 &4547054732234175319
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -42,10 +42,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.4179825, y: 0.72932124, z: 0.4756274}
+  m_Center: {x: 0.038862128, y: 0.36134112, z: -0.023125667}
 --- !u!1001 &6529473044646602796
 PrefabInstance:
   m_ObjectHideFlags: 0
