@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 43bc8ab161f7ea04eadb8f6a1ec77e58
+guid: a1650fd943d43e4478e9f33b3b2709c6
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -11,33 +11,32 @@ ScriptedImporter:
   version: 29
   projectContext: 2
   mGraphInstanceData:
-  - graphLabel: Abandoned Factory Tiled Floor 02
-    prototypeName: Abandoned Factory Tiled Floor 02
+  - graphLabel: Moss
+    prototypeName: Moss
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
-    preset: " <sbspreset pkgurl=\"pkg://abandoned_factory_tiled_floor_02\" label=\"\"
-      >\n  <presetinput identifier=\"$outputsize\" uid=\"1371957087\" type=\"8\"
-      value=\"9,9\" />\n  <presetinput identifier=\"tiles_color\" uid=\"657388181\"
-      type=\"2\" value=\"0.726415,0.645036,0.531105\" />\n  <presetinput identifier=\"paint_color\"
-      uid=\"659813488\" type=\"2\" value=\"0.150943,0.0836169,0.01068\" />\n </sbspreset>\n"
+    preset: " <sbspreset pkgurl=\"pkg://Moss\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
+      uid=\"1973358992\" type=\"8\" value=\"9,9\" />\n  <presetinput identifier=\"scale\"
+      uid=\"497789202\" type=\"0\" value=\"545\" />\n  <presetinput identifier=\"bumps_strength\"
+      uid=\"497912090\" type=\"0\" value=\"0.821\" />\n  <presetinput identifier=\"roughness\"
+      uid=\"498000408\" type=\"0\" value=\"1\" />\n </sbspreset>\n"
     shaderName: Universal Render Pipeline/Lit
     materialProperties:
       shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-      shaderKeywords: _BASEMAP _BUMPMAP _METALLICGLOSSMAP _METALLICSPECGLOSSMAP _NORMALMAP
-        _OCCLUSIONMAP _SPECGLOSSMAP
+      shaderKeywords: _BASEMAP _BUMPMAP _NORMALMAP _OCCLUSIONMAP
       lightmapFlags: 4
       enableInstancingVariants: 0
       doubleSidedGI: 0
       customRenderQueue: 2000
       texEnvs:
       - name: _BaseMap
-        texture: {fileID: 3611837695061676110, guid: 43bc8ab161f7ea04eadb8f6a1ec77e58,
+        texture: {fileID: -6854680209839234324, guid: a1650fd943d43e4478e9f33b3b2709c6,
           type: 3}
-        scale: {x: 25, y: 25}
+        scale: {x: 32, y: 32}
         offset: {x: 0, y: 0}
       - name: _BumpMap
-        texture: {fileID: -787027549985747155, guid: 43bc8ab161f7ea04eadb8f6a1ec77e58,
+        texture: {fileID: 1357444719779815373, guid: a1650fd943d43e4478e9f33b3b2709c6,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
@@ -59,15 +58,14 @@ ScriptedImporter:
         offset: {x: 0, y: 0}
       - name: _MainTex
         texture: {instanceID: 0}
-        scale: {x: 25, y: 25}
+        scale: {x: 32, y: 32}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
-        texture: {fileID: 8398962269169354736, guid: 43bc8ab161f7ea04eadb8f6a1ec77e58,
-          type: 3}
+        texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _OcclusionMap
-        texture: {fileID: -1248759573883679741, guid: 43bc8ab161f7ea04eadb8f6a1ec77e58,
+        texture: {fileID: -3292141256547660477, guid: a1650fd943d43e4478e9f33b3b2709c6,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
@@ -76,8 +74,7 @@ ScriptedImporter:
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _SpecGlossMap
-        texture: {fileID: 6115808637841451635, guid: 43bc8ab161f7ea04eadb8f6a1ec77e58,
-          type: 3}
+        texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: unity_Lightmaps
@@ -98,7 +95,7 @@ ScriptedImporter:
       - name: _Blend
         float: 0
       - name: _BumpScale
-        float: 1
+        float: 0.92
       - name: _ClearCoatMask
         float: 0
       - name: _ClearCoatSmoothness
@@ -122,7 +119,7 @@ ScriptedImporter:
       - name: _GlossyReflections
         float: 0
       - name: _Metallic
-        float: 0
+        float: 0.777
       - name: _OcclusionStrength
         float: 1
       - name: _Parallax
@@ -132,7 +129,7 @@ ScriptedImporter:
       - name: _ReceiveShadows
         float: 1
       - name: _Smoothness
-        float: 1
+        float: 0
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
@@ -155,15 +152,6 @@ ScriptedImporter:
       - name: _SpecColor
         color: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     outputDescList:
-    - outputName: diffuse
-      identifier: diffuse
-      usageName: diffuse
-      channelStr: diffuse
-      label: Diffuse
-      usage: 0
-      bImage: 1
-      bNumerical: 0
-      bLinear: 0
     - outputName: baseColor
       identifier: basecolor
       usageName: baseColor
@@ -182,48 +170,12 @@ ScriptedImporter:
       bImage: 1
       bNumerical: 0
       bLinear: 1
-    - outputName: specular
-      identifier: specular
-      usageName: specular
-      channelStr: specular
-      label: Specular
-      usage: 11
-      bImage: 1
-      bNumerical: 0
-      bLinear: 0
-    - outputName: glossiness
-      identifier: glossiness
-      usageName: glossiness
-      channelStr: glossiness
-      label: Glossiness
-      usage: 14
-      bImage: 1
-      bNumerical: 0
-      bLinear: 1
     - outputName: roughness
       identifier: roughness
       usageName: roughness
       channelStr: roughness
       label: Roughness
       usage: 15
-      bImage: 1
-      bNumerical: 0
-      bLinear: 1
-    - outputName: metallic
-      identifier: metallic
-      usageName: metallic
-      channelStr: metallic
-      label: Metallic
-      usage: 34
-      bImage: 1
-      bNumerical: 0
-      bLinear: 1
-    - outputName: specularLevel
-      identifier: specularlevel
-      usageName: specularLevel
-      channelStr: specularLevel
-      label: Specular Level
-      usage: 12
       bImage: 1
       bNumerical: 0
       bLinear: 1
@@ -246,11 +198,6 @@ ScriptedImporter:
       bNumerical: 0
       bLinear: 1
     texturePackingList:
-    - targetName: diffuse
-      components:
-      - sourceName: diffuse
-        from: 0
-        to: 3
     - targetName: baseColor
       components:
       - sourceName: baseColor
@@ -261,29 +208,9 @@ ScriptedImporter:
       - sourceName: normal
         from: 0
         to: 3
-    - targetName: specular
-      components:
-      - sourceName: smoothness
-        from: 0
-        to: 3
-    - targetName: glossiness
-      components:
-      - sourceName: glossiness
-        from: 0
-        to: 3
     - targetName: roughness
       components:
       - sourceName: roughness
-        from: 0
-        to: 3
-    - targetName: metallic
-      components:
-      - sourceName: smoothness
-        from: 0
-        to: 3
-    - targetName: specularLevel
-      components:
-      - sourceName: specularLevel
         from: 0
         to: 3
     - targetName: height
@@ -297,43 +224,23 @@ ScriptedImporter:
         from: 0
         to: 3
     textureParameters:
-    - textureName: Abandoned Factory Tiled Floor 02 - diffuse
+    - textureName: Moss - baseColor
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: Abandoned Factory Tiled Floor 02 - baseColor
+    - textureName: Moss - normal
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: Abandoned Factory Tiled Floor 02 - normal
+    - textureName: Moss - roughness
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: Abandoned Factory Tiled Floor 02 - specular
+    - textureName: Moss - height
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: Abandoned Factory Tiled Floor 02 - glossiness
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Abandoned Factory Tiled Floor 02 - roughness
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Abandoned Factory Tiled Floor 02 - metallic
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Abandoned Factory Tiled Floor 02 - specularLevel
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Abandoned Factory Tiled Floor 02 - height
-      wrapMode: 0
-      filterMode: 1
-      aniso: 1
-    - textureName: Abandoned Factory Tiled Floor 02 - ambientOcclusion
+    - textureName: Moss - ambientOcclusion
       wrapMode: 0
       filterMode: 1
       aniso: 1
@@ -348,11 +255,9 @@ ScriptedImporter:
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 1
-    material: {fileID: -6020589283859954799, guid: 43bc8ab161f7ea04eadb8f6a1ec77e58,
+    material: {fileID: -5186266747319645695, guid: a1650fd943d43e4478e9f33b3b2709c6,
       type: 3}
     generatedTextures:
-    - {fileID: 3611837695061676110, guid: 43bc8ab161f7ea04eadb8f6a1ec77e58, type: 3}
-    - {fileID: -787027549985747155, guid: 43bc8ab161f7ea04eadb8f6a1ec77e58, type: 3}
-    - {fileID: 6115808637841451635, guid: 43bc8ab161f7ea04eadb8f6a1ec77e58, type: 3}
-    - {fileID: 8398962269169354736, guid: 43bc8ab161f7ea04eadb8f6a1ec77e58, type: 3}
-    - {fileID: -1248759573883679741, guid: 43bc8ab161f7ea04eadb8f6a1ec77e58, type: 3}
+    - {fileID: -6854680209839234324, guid: a1650fd943d43e4478e9f33b3b2709c6, type: 3}
+    - {fileID: 1357444719779815373, guid: a1650fd943d43e4478e9f33b3b2709c6, type: 3}
+    - {fileID: -3292141256547660477, guid: a1650fd943d43e4478e9f33b3b2709c6, type: 3}
