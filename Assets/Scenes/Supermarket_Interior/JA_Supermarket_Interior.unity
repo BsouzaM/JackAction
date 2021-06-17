@@ -100,7 +100,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: e0415e30e1942ea4db64533f5fb18373,
     type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 32bb91f39b2b8e940bd83824ccee49a6,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: a60383d48fe05a84db87d27b2cd9d012,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -2283,6 +2283,26 @@ Transform:
   m_Father: {fileID: 4016738287445657724}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &178445351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6168152999357825203, guid: c233d644b6067cb459d93d663f93009e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1173615220170270949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &178445355
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178445351}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8487385046167428715, guid: 6047c665ef796d04689e9e95ce54e99b, type: 3}
 --- !u!1 &189071101
 GameObject:
   m_ObjectHideFlags: 0
