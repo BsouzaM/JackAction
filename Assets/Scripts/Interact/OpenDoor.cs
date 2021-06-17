@@ -15,6 +15,6 @@ public class OpenDoor : InteractBehaviour
 
     void rotate()
     {
-        transform.eulerAngles = Vector3.up * -90;
+        transform.eulerAngles = Vector3.up * 90;
     }
 }

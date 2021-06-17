@@ -17,7 +17,7 @@ ScriptedImporter:
     generateAllOutputs: 0
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://PavingComposite\" label=\"\" >\n  <presetinput
-      identifier=\"$outputsize\" uid=\"579077789\" type=\"8\" value=\"9,9\" />\n 
+      identifier=\"$outputsize\" uid=\"579077789\" type=\"8\" value=\"11,11\" />\n 
       <presetinput identifier=\"tiling_amount\" uid=\"1245311018\" type=\"4\" value=\"15\"
       />\n  <presetinput identifier=\"scale\" uid=\"1245306491\" type=\"0\" value=\"1.38\"
       />\n  <presetinput identifier=\"scale_random\" uid=\"1245304689\" type=\"0\"
@@ -47,7 +47,7 @@ ScriptedImporter:
       - name: _BaseMap
         texture: {fileID: -1926794407396058645, guid: 072286978314e9145a4400341281f4c1,
           type: 3}
-        scale: {x: 10, y: 10}
+        scale: {x: 30, y: 30}
         offset: {x: 0, y: 0}
       - name: _BumpMap
         texture: {fileID: -6030488960859117020, guid: 072286978314e9145a4400341281f4c1,
@@ -72,7 +72,7 @@ ScriptedImporter:
         offset: {x: 0, y: 0}
       - name: _MainTex
         texture: {instanceID: 0}
-        scale: {x: 10, y: 10}
+        scale: {x: 30, y: 30}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
         texture: {instanceID: 0}
@@ -264,8 +264,8 @@ ScriptedImporter:
     - label: Default
       bOverride: 0
       bLockRatio: 1
-      textureWidth: 512
-      textureHeight: 512
+      textureWidth: 2048
+      textureHeight: 2048
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 1
