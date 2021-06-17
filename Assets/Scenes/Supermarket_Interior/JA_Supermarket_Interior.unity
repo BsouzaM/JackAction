@@ -98,9 +98,9 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000004, guid: be25ab656a7a88e44a48db3bbc21256c,
+  m_LightingDataAsset: {fileID: 112000000, guid: e0415e30e1942ea4db64533f5fb18373,
     type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: a60383d48fe05a84db87d27b2cd9d012,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 32bb91f39b2b8e940bd83824ccee49a6,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -23610,18 +23610,20 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: -876546973899608171, guid: 8e095ac6a1220d54ca320272d99f95e0,
+      objectReference: {fileID: -3276089240487736867, guid: e441b7e78dc38bb44833a9935c1ad354,
         type: 3}
     - target: {fileID: 5663648204069298534, guid: c233d644b6067cb459d93d663f93009e,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: -876546973899608171, guid: 789670fa2b2237e458e6ee2b3d444974,
+        type: 3}
     - target: {fileID: 5663648204069298534, guid: c233d644b6067cb459d93d663f93009e,
         type: 3}
       propertyPath: m_Materials.Array.data[3]
       value: 
-      objectReference: {fileID: 2100000, guid: 046d63d2ab45d4a268ad613744852fc9, type: 2}
+      objectReference: {fileID: -3276089240487736867, guid: 6aeabf86779ce3b498adc4bbf2b8b49e,
+        type: 3}
     - target: {fileID: 6168152999357825203, guid: c233d644b6067cb459d93d663f93009e,
         type: 3}
       propertyPath: m_StaticEditorFlags
