@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 072286978314e9145a4400341281f4c1
+guid: 6f9a695375b1f854fb97c884d463e5a4
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -11,28 +11,14 @@ ScriptedImporter:
   version: 29
   projectContext: 2
   mGraphInstanceData:
-  - graphLabel: PavingComposite
-    prototypeName: PavingComposite
+  - graphLabel: CinderBlocks
+    prototypeName: CinderBlocks
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
-    preset: " <sbspreset pkgurl=\"pkg://PavingComposite\" label=\"\" >\n  <presetinput
-      identifier=\"$outputsize\" uid=\"579077789\" type=\"8\" value=\"9,9\" />\n 
-      <presetinput identifier=\"tiling_amount\" uid=\"1245311018\" type=\"4\" value=\"15\"
-      />\n  <presetinput identifier=\"scale\" uid=\"1245306491\" type=\"0\" value=\"1.38\"
-      />\n  <presetinput identifier=\"scale_random\" uid=\"1245304689\" type=\"0\"
-      value=\"0.261\" />\n  <presetinput identifier=\"rotation_random\" uid=\"1245300748\"
-      type=\"0\" value=\"0\" />\n  <presetinput identifier=\"displacement_per_stone\"
-      uid=\"1245298695\" type=\"0\" value=\"0.495\" />\n  <presetinput identifier=\"blending_height_position\"
-      uid=\"1245264322\" type=\"0\" value=\"0.205\" />\n  <presetinput identifier=\"roughness\"
-      uid=\"1245226867\" type=\"0\" value=\"0.523\" />\n  <presetinput identifier=\"pattern_scale\"
-      uid=\"1245254206\" type=\"4\" value=\"2\" />\n  <presetinput identifier=\"pattern_selection\"
-      uid=\"1245236634\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"normal_intensity\"
-      uid=\"1245199155\" type=\"0\" value=\"1.19\" />\n  <presetinput identifier=\"Ground_hue\"
-      uid=\"1245197472\" type=\"0\" value=\"0.48\" />\n  <presetinput identifier=\"Ground_saturation\"
-      uid=\"1245197474\" type=\"0\" value=\"0.251\" />\n  <presetinput identifier=\"Ground_luminosity\"
-      uid=\"1245197148\" type=\"0\" value=\"0.506\" />\n  <presetinput identifier=\"ground_tiling\"
-      uid=\"1245197129\" type=\"4\" value=\"4\" />\n </sbspreset>\n"
+    preset: " <sbspreset pkgurl=\"pkg://CinderBlocks\" label=\"\" >\n  <presetinput
+      identifier=\"$outputsize\" uid=\"194981357\" type=\"8\" value=\"9,9\" />\n
+      </sbspreset>\n"
     shaderName: Universal Render Pipeline/Lit
     materialProperties:
       shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
@@ -43,12 +29,12 @@ ScriptedImporter:
       customRenderQueue: 2000
       texEnvs:
       - name: _BaseMap
-        texture: {fileID: -1926794407396058645, guid: 072286978314e9145a4400341281f4c1,
+        texture: {fileID: 3441539328060966507, guid: 6f9a695375b1f854fb97c884d463e5a4,
           type: 3}
-        scale: {x: 10, y: 10}
+        scale: {x: 5, y: 5}
         offset: {x: 0, y: 0}
       - name: _BumpMap
-        texture: {fileID: -6030488960859117020, guid: 072286978314e9145a4400341281f4c1,
+        texture: {fileID: 6646134019701251380, guid: 6f9a695375b1f854fb97c884d463e5a4,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
@@ -70,14 +56,14 @@ ScriptedImporter:
         offset: {x: 0, y: 0}
       - name: _MainTex
         texture: {instanceID: 0}
-        scale: {x: 10, y: 10}
+        scale: {x: 5, y: 5}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
         texture: {instanceID: 0}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _OcclusionMap
-        texture: {fileID: -2119707179368711110, guid: 072286978314e9145a4400341281f4c1,
+        texture: {fileID: 8556645799846645379, guid: 6f9a695375b1f854fb97c884d463e5a4,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
@@ -141,7 +127,7 @@ ScriptedImporter:
       - name: _ReceiveShadows
         float: 1
       - name: _Smoothness
-        float: 0
+        float: 1
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
@@ -236,23 +222,23 @@ ScriptedImporter:
         from: 0
         to: 3
     textureParameters:
-    - textureName: PavingComposite - baseColor
+    - textureName: CinderBlocks - baseColor
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: PavingComposite - normal
+    - textureName: CinderBlocks - normal
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: PavingComposite - roughness
+    - textureName: CinderBlocks - roughness
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: PavingComposite - height
+    - textureName: CinderBlocks - height
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: PavingComposite - ambientOcclusion
+    - textureName: CinderBlocks - ambientOcclusion
       wrapMode: 0
       filterMode: 1
       aniso: 1
@@ -267,9 +253,9 @@ ScriptedImporter:
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 1
-    material: {fileID: -3769381881805342245, guid: 072286978314e9145a4400341281f4c1,
+    material: {fileID: -3975959851088405690, guid: 6f9a695375b1f854fb97c884d463e5a4,
       type: 3}
     generatedTextures:
-    - {fileID: -1926794407396058645, guid: 072286978314e9145a4400341281f4c1, type: 3}
-    - {fileID: -6030488960859117020, guid: 072286978314e9145a4400341281f4c1, type: 3}
-    - {fileID: -2119707179368711110, guid: 072286978314e9145a4400341281f4c1, type: 3}
+    - {fileID: 3441539328060966507, guid: 6f9a695375b1f854fb97c884d463e5a4, type: 3}
+    - {fileID: 6646134019701251380, guid: 6f9a695375b1f854fb97c884d463e5a4, type: 3}
+    - {fileID: 8556645799846645379, guid: 6f9a695375b1f854fb97c884d463e5a4, type: 3}

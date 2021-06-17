@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 072286978314e9145a4400341281f4c1
+guid: ce525ec7b022ce449860915b5e0cdf10
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -11,44 +11,30 @@ ScriptedImporter:
   version: 29
   projectContext: 2
   mGraphInstanceData:
-  - graphLabel: PavingComposite
-    prototypeName: PavingComposite
+  - graphLabel: Planks
+    prototypeName: Planks
     graphDescIndex: 0
     generateAllOutputs: 0
     generateMipMaps: 1
-    preset: " <sbspreset pkgurl=\"pkg://PavingComposite\" label=\"\" >\n  <presetinput
-      identifier=\"$outputsize\" uid=\"579077789\" type=\"8\" value=\"9,9\" />\n 
-      <presetinput identifier=\"tiling_amount\" uid=\"1245311018\" type=\"4\" value=\"15\"
-      />\n  <presetinput identifier=\"scale\" uid=\"1245306491\" type=\"0\" value=\"1.38\"
-      />\n  <presetinput identifier=\"scale_random\" uid=\"1245304689\" type=\"0\"
-      value=\"0.261\" />\n  <presetinput identifier=\"rotation_random\" uid=\"1245300748\"
-      type=\"0\" value=\"0\" />\n  <presetinput identifier=\"displacement_per_stone\"
-      uid=\"1245298695\" type=\"0\" value=\"0.495\" />\n  <presetinput identifier=\"blending_height_position\"
-      uid=\"1245264322\" type=\"0\" value=\"0.205\" />\n  <presetinput identifier=\"roughness\"
-      uid=\"1245226867\" type=\"0\" value=\"0.523\" />\n  <presetinput identifier=\"pattern_scale\"
-      uid=\"1245254206\" type=\"4\" value=\"2\" />\n  <presetinput identifier=\"pattern_selection\"
-      uid=\"1245236634\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"normal_intensity\"
-      uid=\"1245199155\" type=\"0\" value=\"1.19\" />\n  <presetinput identifier=\"Ground_hue\"
-      uid=\"1245197472\" type=\"0\" value=\"0.48\" />\n  <presetinput identifier=\"Ground_saturation\"
-      uid=\"1245197474\" type=\"0\" value=\"0.251\" />\n  <presetinput identifier=\"Ground_luminosity\"
-      uid=\"1245197148\" type=\"0\" value=\"0.506\" />\n  <presetinput identifier=\"ground_tiling\"
-      uid=\"1245197129\" type=\"4\" value=\"4\" />\n </sbspreset>\n"
+    preset: " <sbspreset pkgurl=\"pkg://Planks\" label=\"\" >\n  <presetinput identifier=\"$outputsize\"
+      uid=\"1503720945\" type=\"8\" value=\"9,9\" />\n </sbspreset>\n"
     shaderName: Universal Render Pipeline/Lit
     materialProperties:
       shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-      shaderKeywords: _BASEMAP _BUMPMAP _NORMALMAP _OCCLUSIONMAP
+      shaderKeywords: _BASEMAP _BUMPMAP _METALLICGLOSSMAP _METALLICSPECGLOSSMAP _NORMALMAP
+        _OCCLUSIONMAP
       lightmapFlags: 4
       enableInstancingVariants: 0
       doubleSidedGI: 0
       customRenderQueue: 2000
       texEnvs:
       - name: _BaseMap
-        texture: {fileID: -1926794407396058645, guid: 072286978314e9145a4400341281f4c1,
+        texture: {fileID: -8726330909934081475, guid: ce525ec7b022ce449860915b5e0cdf10,
           type: 3}
-        scale: {x: 10, y: 10}
+        scale: {x: 5, y: 5}
         offset: {x: 0, y: 0}
       - name: _BumpMap
-        texture: {fileID: -6030488960859117020, guid: 072286978314e9145a4400341281f4c1,
+        texture: {fileID: 953013509716252338, guid: ce525ec7b022ce449860915b5e0cdf10,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
@@ -70,14 +56,15 @@ ScriptedImporter:
         offset: {x: 0, y: 0}
       - name: _MainTex
         texture: {instanceID: 0}
-        scale: {x: 10, y: 10}
+        scale: {x: 5, y: 5}
         offset: {x: 0, y: 0}
       - name: _MetallicGlossMap
-        texture: {instanceID: 0}
+        texture: {fileID: 8214405369860938676, guid: ce525ec7b022ce449860915b5e0cdf10,
+          type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
       - name: _OcclusionMap
-        texture: {fileID: -2119707179368711110, guid: 072286978314e9145a4400341281f4c1,
+        texture: {fileID: 3029181477406770509, guid: ce525ec7b022ce449860915b5e0cdf10,
           type: 3}
         scale: {x: 1, y: 1}
         offset: {x: 0, y: 0}
@@ -141,7 +128,7 @@ ScriptedImporter:
       - name: _ReceiveShadows
         float: 1
       - name: _Smoothness
-        float: 0
+        float: 1
       - name: _SmoothnessTextureChannel
         float: 0
       - name: _SpecularHighlights
@@ -200,8 +187,17 @@ ScriptedImporter:
       bImage: 1
       bNumerical: 0
       bLinear: 1
+    - outputName: metallic
+      identifier: metallic
+      usageName: metallic
+      channelStr: metallic
+      label: Metallic
+      usage: 34
+      bImage: 1
+      bNumerical: 0
+      bLinear: 1
     - outputName: ambientOcclusion
-      identifier: ambientocclusion
+      identifier: ambientOcclusion
       usageName: ambientOcclusion
       channelStr: ambientOcclusion
       label: Ambient Occlusion
@@ -230,29 +226,38 @@ ScriptedImporter:
       - sourceName: height
         from: 0
         to: 3
+    - targetName: metallic
+      components:
+      - sourceName: smoothness
+        from: 0
+        to: 3
     - targetName: ambientOcclusion
       components:
       - sourceName: ambientOcclusion
         from: 0
         to: 3
     textureParameters:
-    - textureName: PavingComposite - baseColor
+    - textureName: Planks - baseColor
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: PavingComposite - normal
+    - textureName: Planks - normal
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: PavingComposite - roughness
+    - textureName: Planks - roughness
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: PavingComposite - height
+    - textureName: Planks - height
       wrapMode: 0
       filterMode: 1
       aniso: 1
-    - textureName: PavingComposite - ambientOcclusion
+    - textureName: Planks - metallic
+      wrapMode: 0
+      filterMode: 1
+      aniso: 1
+    - textureName: Planks - ambientOcclusion
       wrapMode: 0
       filterMode: 1
       aniso: 1
@@ -267,9 +272,10 @@ ScriptedImporter:
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 1
-    material: {fileID: -3769381881805342245, guid: 072286978314e9145a4400341281f4c1,
+    material: {fileID: -1266757229121151654, guid: ce525ec7b022ce449860915b5e0cdf10,
       type: 3}
     generatedTextures:
-    - {fileID: -1926794407396058645, guid: 072286978314e9145a4400341281f4c1, type: 3}
-    - {fileID: -6030488960859117020, guid: 072286978314e9145a4400341281f4c1, type: 3}
-    - {fileID: -2119707179368711110, guid: 072286978314e9145a4400341281f4c1, type: 3}
+    - {fileID: -8726330909934081475, guid: ce525ec7b022ce449860915b5e0cdf10, type: 3}
+    - {fileID: 953013509716252338, guid: ce525ec7b022ce449860915b5e0cdf10, type: 3}
+    - {fileID: 8214405369860938676, guid: ce525ec7b022ce449860915b5e0cdf10, type: 3}
+    - {fileID: 3029181477406770509, guid: ce525ec7b022ce449860915b5e0cdf10, type: 3}
