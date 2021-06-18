@@ -40,12 +40,10 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
-    duration: 2
   - logo: {fileID: 21300000, guid: 0979baab7f514924fada54e32c4c5014, type: 3}
     duration: 2
-  - logo: {fileID: 21300000, guid: 3ca024827aeeb1d45a7a5ce36c4369cd, type: 3}
-    duration: 4
+  - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
+    duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
@@ -133,7 +131,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: Alpha v0.02
+  bundleVersion: Entrega C6
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
